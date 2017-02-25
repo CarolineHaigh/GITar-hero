@@ -12,4 +12,16 @@ function httpGet(url)
 var owner = "CarolineHaigh";
 var repo = "GITar-hero";
 
-document.writeln(httpGet("https://api.github.com/repos/" + owner + "/" + repo + "/commits"));
+var data = httpGet("https://api.github.com/repos/" + owner + "/" + repo + "/commits");
+
+
+var fdata = JSON.parse(data, function(name, value) {
+    // screen (e.g., based on name or typeof value)
+    if (name === 'author') {
+        return value;
+    }
+    // otherwise return value
+    return undefined;
+});
+
+document.writeln(fdata);
