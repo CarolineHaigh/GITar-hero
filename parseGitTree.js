@@ -9,7 +9,19 @@ function httpGet(url)
     return xmlHttp.responseText;
 }
 
-var owner = "alexdobin";
-var repo = "STAR";
+var owner = "CarolineHaigh";
+var repo = "GITar-hero";
 
-document.write(httpGet("https://api.github.com/repos/" + owner + "/" + repo + "/git/trees/master"));
+var data = httpGet("https://api.github.com/repos/" + owner + "/" + repo + "/commits");
+
+
+var fdata = JSON.parse(data, function(name, value) {
+    // screen (e.g., based on name or typeof value)
+    if (name === 'author') {
+        return value;
+    }
+    // otherwise return value
+    return undefined;
+});
+
+document.writeln(fdata);
