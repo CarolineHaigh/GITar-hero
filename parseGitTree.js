@@ -11,11 +11,15 @@ function httpGet(url)
 
 var owner = "CarolineHaigh";
 var repo = "GITar-hero";
+var messageList = [];
 
 var data = JSON.parse(httpGet("https://api.github.com/repos/" + owner + "/" + repo + "/commits"));
 
 data.forEach(function(x){
-		document.writeln(x.commit.author.name);
+    messageList.push(x.commit.message);
+    document.writeln(x.commit.author.name + " " + x.commit.author.date);
+
+    document.writeln("-------");
 	});
 
-
+document.writeln(messageList);
