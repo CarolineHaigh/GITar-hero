@@ -23,21 +23,20 @@ var lastAuthor = null;
 json.forEach(function(key){
 
     var status = null;
-    var parentValue = Object.keys(x.parents).length;
+    var parentValue = Object.keys(key.parents).length;
     currAuthor = key.commit.author.name;
 
-    if(currAuthor != lastAuthor) {
+    if(parentValue > 1) {
+        status = 2;
+    } else if(currAuthor != lastAuthor) {
         status = 1;
-    } else if (){
-
-    } else {
-        status = 1;
+    } else if ((currAuthor == lastAuthor) && (parentValue == 1)){
+        status = 0;
     }
 
-
     commitList.push(key.commit.author.name);
-    commitLast.push(status);
-    commitList.push(x.commit.message);
+    commitList.push(status);
+    commitList.push(key.commit.message);
     listOfLists.push(commitList);
 
 	});
