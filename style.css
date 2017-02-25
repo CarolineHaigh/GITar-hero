@@ -1,4 +1,23 @@
 h2{
-	color:red;
-	font-size: 36pt;
+	font-size: 72pt;
+	text-align: center;
+}
+
+p{
+	text-align: center;
+}
+
+body{
+	color:#ba02f2;
+	background-color: black;
+	font-family: 'Black Ops One', cursive;
+}
+
+#fname{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px
 }

@@ -18,6 +18,7 @@ var data = JSON.parse(httpGet("https://api.github.com/repos/" + owner + "/" + re
 data.forEach(function(x){
     messageList.push(x.commit.message);
     document.writeln(x.commit.author.name + " " + x.commit.author.date);
+	document.writeln(Object.keys(x.parents).length);
 
     document.writeln("-------");
 	});
