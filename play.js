@@ -76,11 +76,13 @@ function setupInstruments()
 }
 
 function play(datas){
-	console.log(datas[0])
+	console.log(authorList);
+
+	datas.forEach(function(e){
+		
+	}
 }
 
-setupInstruments()
-play(listOfLists)
-
-
+setupInstruments();
+play(listOfLists);
 Tone.Transport.start();

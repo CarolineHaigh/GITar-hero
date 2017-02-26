@@ -12,6 +12,7 @@ function httpGet(url)
 var owner = "CarolineHaigh";
 var repo = "GITar-hero";
 var listOfLists = [];
+var authorList = [];
 
 var json = JSON.parse(httpGet("https://api.github.com/repos/" + owner + "/" + repo + "/commits"));
 
@@ -32,6 +33,10 @@ json.forEach(function(key){
     } else if ((currAuthor == lastAuthor) && (parentValue == 1)){
         status = 0;
     }
+    
+	if(authorList.indexOf(currAuthor) == -1){
+		authorList.push(currAuthor);
+	}
 
     listOfLists.push([key.commit.author.name, status, key.commit.message]);
 
