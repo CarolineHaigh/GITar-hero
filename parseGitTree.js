@@ -30,13 +30,15 @@ json.forEach(function(key){
         status = 2;
     } else if(currAuthor != lastAuthor) {
         status = 1;
-    } else if ((currAuthor == lastAuthor) && (parentValue == 1)){
+    } else if (currAuthor == lastAuthor){
         status = 0;
     }
     
 	if(authorList.indexOf(currAuthor) == -1){
 		authorList.push(currAuthor);
 	}
+	
+	lastAuthor = currAuthor;
 
     listOfLists.push([key.commit.author.name, status, key.commit.message]);
 
