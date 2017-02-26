@@ -113,7 +113,7 @@ function setupInstruments()
 	var bpattern = new Tone.Pattern(function(time, note){
 		bass.triggerAttackRelease(note, '8n');
 	}, ["D3", "A3", "B3", "G3"], 'randomWalk');
-	bprog.interval = "8n";
+	bpattern.interval = "8n";
 	
 	var dsynth = new Tone.MembraneSynth().toMaster();
 

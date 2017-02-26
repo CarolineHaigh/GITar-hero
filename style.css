@@ -13,6 +13,15 @@ body{
 	font-family: 'Black Ops One', cursive;
 }
 
+.box{
+    transition: all ease-in-out 200ms;
+    margin-top:0;
+}
+.boxoff{
+    opacity: 0;
+    margin-top:-100vh;
+}
+
 #urlName{
     width: 50%;
     padding: 12px 20px;

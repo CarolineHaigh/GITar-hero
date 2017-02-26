@@ -10,6 +10,8 @@ function validate() {
 		alert("Please enter a valid URL to a GitHub repo.");
 
 	} else if (pattern.test(url)) {
+        document.getElementById("intro").className = "boxoff";
+
 		var splitUrl = url.split("/");
 		var owner = splitUrl[3];
 		var repo = splitUrl[4];
