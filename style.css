@@ -13,11 +13,29 @@ body{
 	font-family: 'Black Ops One', cursive;
 }
 
-#fname{
+#urlName{
     width: 50%;
     padding: 12px 20px;
     margin: 0 auto;
     display: block;
     border: 1px solid #ccc;
     border-radius: 4px
+}
+
+#button{
+    width: 20%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #ccc;
+
+    background: #ba02f2;
+    background-image: -webkit-linear-gradient(top, #ba02f2, #7e09a1);
+    border-radius: 10px;
+    text-shadow: 3px 1px 3px #cf23cf;
+    font-family: Arial;
+    color: #000000;
+    font-size: 30px;
+    padding: 9px 20px 10px 20px;
+    text-decoration: none;
 }
