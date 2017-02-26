@@ -31,8 +31,16 @@ body{
     background-image: -webkit-linear-gradient(top, #ba02f2, #7e09a1);
     border-radius: 10px;
     text-shadow: 3px 1px 3px #cf23cf;
-    font-family: Arial;
     color: #000000;
     font-size: 30px;
     text-decoration: none;
+}
+
+#canvas{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -1;
+	left: 0px;
+	top: 0px;
 }

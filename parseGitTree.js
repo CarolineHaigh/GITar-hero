@@ -58,7 +58,9 @@ function parsejson(owner, repo){
 			
 	});
 	
+	drawsetup(authorList);
 	play(listOfLists, authorList);
+	playsong(listOfLists, authorList);
 
 }
 
