@@ -13,14 +13,30 @@
 	<section id="intro">
 		<h2>GITar Hero</h2>
 		<p>Enter a public github repository URL:</p>
-		<input type="text" id="fname" placeholder="https://github.com/CarolineHaigh/GITar-hero">
+			<input type="text" id="urlName" placeholder="https://github.com/CarolineHaigh/GITar-hero">
+			<button onclick="myFunction()">Submit</button>
+		<script>
+            function myFunction() {
+                var url = document.getElementById("urlName").value;
+                var splitUrl = url.split("/");
+                var owner = splitUrl[3];
+                var repo = splitUrl[4];
+                document.write(splitUrl);
+
+                document.write("----");
+
+                document.write(owner + " " + repo);
+            }
+		</script>
+
+
 	</section>
     <canvas class="canvas">
       Your browser does not support HTML5 canvas
     </canvas>
-    
-    <!--<script src="parseGitTree.js"></script>-->
+      
     <script src="play.js"></script> 
+    <script src="parseGitTree.js"></script>
 
 </body>
 </html>
