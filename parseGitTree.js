@@ -11,7 +11,6 @@ function httpGet(url)
 
 var owner = "CarolineHaigh";
 var repo = "GITar-hero";
-var commitList = [];
 var listOfLists = [];
 
 var json = JSON.parse(httpGet("https://api.github.com/repos/" + owner + "/" + repo + "/commits"));
@@ -34,10 +33,7 @@ json.forEach(function(key){
         status = 0;
     }
 
-    commitList.push(key.commit.author.name);
-    commitList.push(status);
-    commitList.push(key.commit.message);
-    listOfLists.push(commitList);
+    listOfLists.push([key.commit.author.name, status, key.commit.message]);
 
 	});
 

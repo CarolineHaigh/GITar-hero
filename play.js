@@ -65,9 +65,6 @@ function setupInstruments()
 	var bpattern = new Tone.Pattern(function(time, note){
 		bass.triggerAttackRelease(note, '4n');
 	}, ["D3", "A3", "B3", "G3"], 'upDown');
-	 
-	bpattern.start(2.25);
-
 
 	var dsynth = new Tone.MembraneSynth().toMaster();
 
@@ -78,6 +75,12 @@ function setupInstruments()
 	dpattern.start(2.0);
 }
 
+function play(datas){
+	console.log(datas[0])
+}
+
 setupInstruments()
+play(listOfLists)
+
 
 Tone.Transport.start();
