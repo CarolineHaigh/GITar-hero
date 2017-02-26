@@ -111,9 +111,10 @@ function setupInstruments()
 	cprog.interval = "1m";
 			
 	var bpattern = new Tone.Pattern(function(time, note){
-		bass.triggerAttackRelease(note, '4n');
-	}, ["D3", "A3", "B3", "G3"], 'upDown');
-
+		bass.triggerAttackRelease(note, '8n');
+	}, ["D3", "A3", "B3", "G3"], 'randomWalk');
+	bprog.interval = "8n";
+	
 	var dsynth = new Tone.MembraneSynth().toMaster();
 
 	var dpattern = new Tone.Pattern(function(time, note){
@@ -123,7 +124,7 @@ function setupInstruments()
 	return [dpattern, cprog, bpattern, cpattern, wpattern];
 }
 
-function play(datas){
+function play(datas, authorList){
 	var patterns = setupInstruments();
 	curr_index = 0;
 	
@@ -143,6 +144,3 @@ function play(datas){
 	Tone.Transport.stop(curr_index.toString() + "m");
 
 }
-
-
-play(listOfLists);
