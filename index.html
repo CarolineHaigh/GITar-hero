@@ -13,7 +13,37 @@
 	<section id="intro">
 		<h2>GITar Hero</h2>
 		<p>Enter a public github repository URL:</p>
-		<input type="text" id="fname" placeholder="https://github.com/CarolineHaigh/GITar-hero">
+			<input type="text" id="urlName" placeholder="https://github.com/CarolineHaigh/GITar-hero">
+			<button onclick="myFunction()" id="button">Submit</button>
+		<script>
+
+            document.getElementById("urlName")
+                .addEventListener("keyup", function(event) {
+                    event.preventDefault();
+                    if (event.keyCode == 13) {
+                        document.getElementById("button").click();
+                    }
+                });
+
+            function myFunction() {
+                var url = document.getElementById("urlName").value; //Get user input - expected URL to github repo
+                var pattern = new RegExp('^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?github([^:\/\n]+)');
+
+                if (!pattern.test(url)) {
+                    alert("Please enter a valid URL to a GitHub repo.");
+
+                } else if (pattern.test(url)) {
+                    var splitUrl = url.split("/");
+                    var owner = splitUrl[3];
+                    var repo = splitUrl[4];
+
+                    document.write(owner + " " + repo);
+                }
+            }
+
+		</script>
+
+
 	</section>
     <canvas class="canvas">
       Your browser does not support HTML5 canvas
