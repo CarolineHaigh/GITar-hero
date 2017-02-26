@@ -42,7 +42,7 @@ function playsong(datas, authorList){
 		Tone.Transport.schedule(function(time){
 			//use the time argument to schedule a callback with Tone.Draw
 			Tone.Draw.schedule(function(){
-				drawnote(ctx, positon);				
+				console.log("Not scheduling anything");				
 			}, time)
 		}, curr_index.toString() + "m")
 		
